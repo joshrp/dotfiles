@@ -47,11 +47,7 @@
 !sublime
 !sublime/Preferences.sublime-settings
 !sublime/sublime-setup.sh
-!sublime/Default (OSX).sublime-keymap
 !sublime/Markdown.sublime-settings
-!tm
-!tm/tm_properties.symlink
-!tm/tm_setup.sh
 !vim
 !vim/vimrc.symlink
 !vim/vim.symlink
@@ -61,6 +57,7 @@
 !vim/vim.symlink/syntax/actionscript.vim
 !vim/vim.symlink/syntax/cucumber.vim
 !vim/vim.symlink/syntax/mkd.vim
+!vim/vundle-setup.sh
 !zsh
 !zsh/config.zsh
 !zsh/prompt.zsh

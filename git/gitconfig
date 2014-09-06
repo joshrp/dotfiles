@@ -1,11 +1,11 @@
 [user]
-  name = Simon Gregory
+  name = Christopher Sidebottom
   email = EMAIL
 [github]
-  user = simongregory
+  user = DaMouse404
 [core]
   editor = mate -w
-  excludesfile = /Users/simon/.gitignore
+  excludesfile = ~/.gitignore
   autocrlf = input
   whitespace = fix,trailing-space,space-before-tab
   quotepath = false

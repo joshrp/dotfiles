@@ -57,19 +57,14 @@ task :uninstall do
   end
 end
 
-desc "Apply some sense to OSX's defaults."
-task :set_osx_defaults do
-  `./osx/set-defaults.sh`
+desc "Setup and install vundle"
+task :setup_vundle do
+  `./vim/vundle-setup.sh`
 end
 
 desc "Setup and install sublime"
 task :setup_sublime do
   `./sublime/sublime-setup.sh`
-end
-
-desc "Setup and install textmate"
-task :setup_textmate do
-  `./tm/tm_setup.sh`
 end
 
 task :default => 'install'

@@ -2,7 +2,6 @@ PACKAGES="$HOME/Library/Application Support/Sublime Text 3/Packages"
 SUBLIME_DOT="$HOME/.dotfiles/sublime"
 USER_PACKAGE="$PACKAGES/User"
 USER_SETTINGS="Preferences.sublime-settings"
-USER_KEY_MAP="Default (OSX).sublime-keymap"
 MD_SETTINGS="Markdown.sublime-settings"
 
 mkdir -p "$USER_PACKAGE"
@@ -23,7 +22,6 @@ function link() {
 }
 
 link "$USER_PACKAGE/$USER_SETTINGS" "$SUBLIME_DOT/$USER_SETTINGS"
-link "$USER_PACKAGE/$USER_KEY_MAP" "$SUBLIME_DOT/$USER_KEY_MAP"
 link "$USER_PACKAGE/$MD_SETTINGS" "$SUBLIME_DOT/$MD_SETTINGS"
 
 # Use https to avoid problems with proxies

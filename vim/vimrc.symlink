@@ -1,4 +1,4 @@
-" Simon Gregory, VIM Configuration
+" Christopher Sidebottom, VIM Configuration
 "
 " Mostly pilfered from pre-existing samples found on my travels.
 " Only tested in VIM 7.3 via the Terminal.app on OSX 10.8
@@ -20,16 +20,16 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-Bundle 'vim-scripts/tComment'
+" Bundle 'vim-scripts/tComment'
 Bundle 'vim-scripts/StripWhiteSpaces'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-rails.git'
-Bundle 'mattn/zencoding-vim'
+" Bundle 'tpope/vim-rails.git'
+Bundle 'mattn/emmet-vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'ActionScript-3-Omnicomplete'
 Bundle 'fugitive.vim'
-"Bundle 'ervandew/supertab'
+" Bundle 'fatih/vim-go'
+" Bundle 'ervandew/supertab'
 
 " vim-scripts repos
 " Bundle 'L9'
@@ -39,14 +39,15 @@ Bundle 'snipMate'
 " non github repos
 " command-t will need installing, invoke
 " the command t help and follow the instructions to complie
-Bundle 'git://git.wincent.com/command-t.git'
+" Bundle 'git://git.wincent.com/command-t.git'
 
 " Colour schemes
 " Bundle 'desert.vim'
 " Bundle 'darkslategray.vim'
 " Bundle 'twilight.vim'
-Bundle 'twilight256.vim'
+" Bundle 'twilight256.vim'
 " Bundle 'Solarized'
+Bundle 'zenburn'
 
 filetype plugin indent on     " required!
 
@@ -60,7 +61,7 @@ set autoindent             " automatic indent new lines
 set smartindent            " be smart about it
 " inoremap # X<BS>#
 set nowrap                 " do not wrap lines
-set softtabstop=2          " yep, two
+set softtabstop=4          "
 set shiftwidth=2           " ..
 set tabstop=4
 set expandtab              " expand tabs to spaces
@@ -160,7 +161,7 @@ autocmd Filetype json setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme twilight256
+colorscheme zenburn
 
 " Overide the colorschemes
 " hi StatusLine ctermbg=darkgrey ctermfg=white
