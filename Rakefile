@@ -62,9 +62,4 @@ task :setup_vundle do
   `./vim/vundle-setup.sh`
 end
 
-desc "Setup and install sublime"
-task :setup_sublime do
-  `./sublime/sublime-setup.sh`
-end
-
 task :default => 'install'

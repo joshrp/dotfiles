@@ -22,6 +22,10 @@
 *.xz
 *.lzma
 
+# Package Directories #
+#######################
+node_modules
+
 #packing-only formats
 *.iso
 *.tar
@@ -59,11 +63,9 @@ Desktop.ini
 
 # TextMate #
 ############
-
 *.tmproj
 
 # Dotfiled #
 ############
-
 *.tmproj
 .rake_tasks~

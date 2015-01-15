@@ -16,37 +16,19 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required!
 Bundle 'gmarik/vundle'
-
-" original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-" Bundle 'vim-scripts/tComment'
 Bundle 'vim-scripts/StripWhiteSpaces'
 Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'tpope/vim-rails.git'
 Bundle 'mattn/emmet-vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'fugitive.vim'
-" Bundle 'fatih/vim-go'
-" Bundle 'ervandew/supertab'
-
-" vim-scripts repos
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
 Bundle 'snipMate'
 
-" non github repos
-" command-t will need installing, invoke
-" the command t help and follow the instructions to complie
-" Bundle 'git://git.wincent.com/command-t.git'
-
-" Colour schemes
-" Bundle 'desert.vim'
-" Bundle 'darkslategray.vim'
-" Bundle 'twilight.vim'
-" Bundle 'twilight256.vim'
-" Bundle 'Solarized'
+" Color
 Bundle 'zenburn'
 
 filetype plugin indent on     " required!
@@ -62,7 +44,7 @@ set smartindent            " be smart about it
 " inoremap # X<BS>#
 set nowrap                 " do not wrap lines
 set softtabstop=4          "
-set shiftwidth=2           " ..
+set shiftwidth=4           " ..
 set tabstop=4
 set expandtab              " expand tabs to spaces
 set nosmarttab             " no thank you to tabs
@@ -77,6 +59,7 @@ set si "Smart indent
 
 " lead with ,
 let mapleader = ","
+nnoremap <leader><leader> <c-^>
 
 " exit to normal mode with 'jj'
 " inoremap jj <ESC>
@@ -109,7 +92,7 @@ set number                 " line numbers
 set wildmenu               " turn on wild menu
 set wildmode=list:longest,full
 set ch=2                   " command line height
-set cc=80                  " highlight column 80 for visual
+set cc=120                  " highlight column 80 for visual
 set backspace=2            " allow backspacing over everything in insert mode
 set whichwrap+=<,>,h,l,[,] " backspace and cursor keys wrap to
 set shortmess=filtIoOA     " shorten messages
@@ -146,12 +129,28 @@ au BufRead,BufNewFile *.less set filetype=css
 au BufRead,BufNewFile *.mdown set filetype=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.as set filetype=actionscript
+au BufRead,BufNewFile *.spv set filetype=php
 
+autocmd Filetype php setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd Filetype javascript setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd Filetype actionscript setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd Filetype coffee setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd Filetype json setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+
+"
+" Treeeee
+"
+" autocmd vimenter * NERDTree
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+"
+" Ctrl P Ignores
+"
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](node_modules|bower_components)|(\.(git|hg|svn))$',
+  \ 'file': '\v\.(exe|so|dll)$'
+  \ }
 
 " ---------------------------------------------------------------------------
 " Colors and Fonts
