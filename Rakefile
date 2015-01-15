@@ -57,6 +57,11 @@ task :uninstall do
   end
 end
 
+desc "Setup and install selecta"
+task :setup_selecta do
+  `./vim/selecta-setup.sh`
+end
+
 desc "Setup and install vundle"
 task :setup_vundle do
   `./vim/vundle-setup.sh`

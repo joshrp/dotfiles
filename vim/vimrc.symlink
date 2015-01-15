@@ -24,7 +24,6 @@ Bundle 'mattn/emmet-vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'fugitive.vim'
-Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'snipMate'
 
@@ -139,18 +138,14 @@ autocmd Filetype coffee setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd Filetype json setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
 "
-" Treeeee
-"
-" autocmd vimenter * NERDTree
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-"
 " Ctrl P Ignores
 "
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](node_modules|bower_components)|(\.(git|hg|svn))$',
   \ 'file': '\v\.(exe|so|dll)$'
   \ }
+
+let g:ctrlp_user_command = 'ack -f %s'
 
 " ---------------------------------------------------------------------------
 " Colors and Fonts

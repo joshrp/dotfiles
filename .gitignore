@@ -3,6 +3,8 @@
 # except:
 !.gitignore
 !.tm_properties
+!ack
+!ack/ackrc.symlink
 !bash
 !bash/aliases.sh
 !bash/bash_profile.symlink
@@ -58,6 +60,7 @@
 !vim/vim.symlink/syntax/cucumber.vim
 !vim/vim.symlink/syntax/mkd.vim
 !vim/vundle-setup.sh
+!vim/selecta-setup.sh
 !zsh
 !zsh/config.zsh
 !zsh/prompt.zsh
