@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 VUNDLE_DIR=~/.vim/bundle/vundle
 
 if [[ ! -d "$VUNDLE_DIR" ]]; then

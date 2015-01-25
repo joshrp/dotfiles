@@ -25,6 +25,7 @@
 !bin/subl
 !bin/trav
 !bin/rbgems
+!dotfiles.sh
 !git
 !git/gitconfig
 !git/completion.zsh
@@ -42,7 +43,6 @@
 !osx
 !osx/set-defaults.sh
 !osx/install-tools.sh
-!Rakefile
 !README.md
 !ruby
 !ruby/gemrc.symlink

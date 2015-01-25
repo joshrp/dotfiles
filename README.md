@@ -17,9 +17,9 @@ If you don't get why then have a read of [some more thoroughly formed thinking][
 
 - `git clone git://github.com/simongregory/dotfiles ~/.dotfiles`
 - `cd ~/.dotfiles`
-- `rake install`
+- `./dotfiles.sh`
 
-The install rake task will symlink the appropriate files in `.dotfiles` to your home directory. Everything is configured and tweaked within `~/.dotfiles`, though.
+The install task will symlink the appropriate files in `.dotfiles` to your home directory. Everything is configured and tweaked within `~/.dotfiles`, though.
 
 ## License
 

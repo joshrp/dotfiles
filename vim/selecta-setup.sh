@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 BIN_DIR=~/bin
 SELECTA_DIR=$(mktemp -d)
 
