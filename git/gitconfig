@@ -4,14 +4,20 @@
 [github]
   user = DaMouse404
 [core]
-  editor = mate -w
+  editor = vim
   excludesfile = ~/.gitignore
   autocrlf = input
   whitespace = fix,trailing-space,space-before-tab
   quotepath = false
+[push]
+  default = simple
 [apply]
   whitespace = fix
 [alias]
+  pud = pull upstream develop
+  pum = pull upstream master
+  chmod-on = config core.filemode true
+  chmod-off = config core.filemode false
   st = status
   ci = commit
   ai = add -i
@@ -28,12 +34,5 @@
   autosetupmerge = true
 [difftool]
   prompt = false
-[diff]
-  tool = Kaleidoscope
-  mnemonicprefix = true
 [color]
   ui = auto
-[difftool "Kaleidoscope"]
-  cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
-[credential]
-  helper = osxkeychain
