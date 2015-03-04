@@ -15,7 +15,7 @@ If you don't get why then have a read of [some more thoroughly formed thinking][
 
 ## Install
 
-- `git clone git://github.com/simongregory/dotfiles ~/.dotfiles`
+- `git clone git://github.com/DaMouse404/dotfiles ~/.dotfiles`
 - `cd ~/.dotfiles`
 - `./dotfiles.sh`
 
