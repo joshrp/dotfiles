@@ -6,7 +6,7 @@ dotfiles_install() {
     backup_all=false
     overwrite_all=false
 
-    RPWD=$(realpath $PWD)
+    RPWD=$(readlink --canonicalize $PWD)
 
     for link in */*.symlink
     do
