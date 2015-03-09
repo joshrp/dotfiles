@@ -26,6 +26,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'fugitive.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'snipMate'
+Bundle 'tComment'
 
 " Color
 Bundle 'zenburn'
