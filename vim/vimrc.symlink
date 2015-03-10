@@ -146,7 +146,15 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$'
   \ }
 
-let g:ctrlp_user_command = 'ack -f %s'
+" Ack > Find
+if executable('ack')
+  let g:ctrlp_user_command = 'ack -f %s'
+endif
+
+" The Silver Searcher > Ack
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " ---------------------------------------------------------------------------
 " Colors and Fonts
