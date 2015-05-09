@@ -1,0 +1,24 @@
+#Main
+vbell off
+escape ``
+startup_message off
+autodetach on
+mousetrack off
+
+#Caption
+caption always "%{kw}%-w%{wr}%n %t %{-}%+w"
+
+#Bindings
+bind c screen 1 #Start numbering at 1, easier on the keyboard
+bind s split #split window
+bind t title #window title
+bind Q quit #quit
+bind - resize -5  # Decrease region by 5
+bind = resize +5  # Increase region by 5
+bindkey -k k3 screen -t Pi phonepi
+
+#Windows
+windowlist title "Num %10=Title %=Flags%"
+windowlist string "  %n - %10= %t %f"
+termcapinfo xterm* ti@:te@
+termcapinfo xterm-color ti@:te@

@@ -30,6 +30,9 @@
 !git/gitconfig
 !git/completion.zsh
 !git/gitignore.symlink
+!git/githelper.symlink
+!git/git-prompt.sh.symlink
+!screenrc.symlink
 !lib
 !lib/bbc_project_completion.rb
 !lib/git_completion

@@ -62,7 +62,7 @@ let mapleader = ","
 nnoremap <leader><leader> <c-^>
 
 " exit to normal mode with 'jj'
-" inoremap jj <ESC>
+inoremap jj <ESC>
 
 " reflow paragraph with Q in normal and visual mode
 " nnoremap Q gqap
