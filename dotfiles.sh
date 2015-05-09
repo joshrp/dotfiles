@@ -42,7 +42,7 @@ dotfiles_install() {
 }
 
 dotfiles_remove() {
-    RPWD=$(realpath $PWD)
+    RPWD=$(readlink $PWD)
 
     for link in */*.symlink
     do
