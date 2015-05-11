@@ -24,7 +24,6 @@ Bundle 'mattn/emmet-vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'fugitive.vim'
-Bundle 'kien/ctrlp.vim'
 Bundle 'snipMate'
 Bundle 'tComment'
 
@@ -138,22 +137,33 @@ autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd Filetype coffee setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd Filetype json setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
-"
-" Ctrl P Ignores
-"
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](node_modules|bower_components)|(\.(git|hg|svn))$',
-  \ 'file': '\v\.(exe|so|dll)$'
-  \ }
+" Run a given vim command on the results of fuzzy selecting from a given shell
+" command. See usage below.
+function! SelectaCommand(choice_command, selecta_args, vim_command)
+    try
+        let selection = system(a:choice_command . " | selecta " . a:selecta_args)
+        catch /Vim:Interrupt/
+            " Swallow the ^C so that the redraw below happens; otherwise there will be
+            " leftovers from selecta on the screen
+            redraw!
+            return
+    endtry
+    redraw!
+    exec a:vim_command . " " . selection
+endfunction
+
+" Find all files in all non-dot directories starting in the working directory.
+" Fuzzy select one of those. Open the selected file with :e.
+nnoremap <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
 
 " Ack > Find
 if executable('ack')
-  let g:ctrlp_user_command = 'ack -f %s'
+    nnoremap <leader>f :call SelectaCommand("ack -f", "", ":e")<cr>
 endif
 
 " The Silver Searcher > Ack
 if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    nnoremap <leader>f :call SelectaCommand("ag -l --nocolor -g ''", "", ":e")<cr>
 endif
 
 " ---------------------------------------------------------------------------
