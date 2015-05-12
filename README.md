@@ -1,6 +1,6 @@
 # Dotfiles
 
-Cooking up the shell on OS X, seasoned for [me][sg].
+Cooking up the shell on OS X, seasoned for [me][DaMouse404].
 
 If you don't get why then have a read of [some more thoroughly formed thinking][holman-blog]. Then dig through a few examples and start cooking up the right solution for you:
 
@@ -35,3 +35,4 @@ Released under the MIT License. Please see the accompanying [LICENSE](LICENSE) d
 [rtomayko]: https://github.com/rtomayko/dotfiles/
 [ryanb]: https://github.com/ryanb/dotfiles/
 [sg]: http://simongregory.com/
+[DaMouse404]: https://github.com/DaMouse404
