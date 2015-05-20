@@ -26,6 +26,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'fugitive.vim'
 Bundle 'snipMate'
 Bundle 'tComment'
+Bundle 'airblade/vim-gitgutter'
 
 " Color
 Bundle 'zenburn'
@@ -105,6 +106,7 @@ set shortmess=filtIoOA     " shorten messages
 set report=0               " tell us about changes
 set nostartofline          " don't jump to the start of line when scrolling
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+set updatetime=1000
 
 " ----------------------------------------------------------------------------
 " Visual Cues
@@ -158,6 +160,15 @@ function! SelectaCommand(choice_command, selecta_args, vim_command)
     redraw!
     exec a:vim_command . " " . selection
 endfunction
+
+function! SelectaBuffer()
+  let bufnrs = filter(range(1, bufnr("$")), 'buflisted(v:val)')
+  let buffers = map(bufnrs, 'bufname(v:val)')
+  call SelectaCommand('echo "' . join(buffers, "\n") . '"', "", ":b")
+endfunction
+
+" Fuzzy select a buffer. Open the selected buffer with :b.
+nnoremap <leader>b :call SelectaBuffer()<cr>
 
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
