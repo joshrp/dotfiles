@@ -5,13 +5,11 @@
     autocrlf = input
     whitespace = fix,trailing-space,space-before-tab
     quotepath = false
-
 [user]
     name = Josh Priestley
     email = EMAIL
-[diff]
-[color]
-    ui = auto
+[github]
+    user = joshrp
 [alias]
     st = status
     ci = commit --verbose
@@ -38,6 +36,7 @@
     #   ra = recent commits, all reachable refs
     #   l = all commits, only current branch
     #   la = all commits, all reachable refs
+
     head = !git r -1
     h = !git head
     hp = "!. ~/.githelpers && show_git_head"
@@ -45,6 +44,11 @@
     ra = !git r --all
     l = "!. ~/.githelpers && pretty_git_log"
     la = !git l --all
-
+[branch]
+    autosetupmerge = true
+[difftool]
+    prompt = false
+[color]
+    ui = auto
 [merge]
     tool = vimdiff
