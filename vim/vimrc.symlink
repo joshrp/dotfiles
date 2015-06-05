@@ -27,6 +27,8 @@ Bundle 'fugitive.vim'
 Bundle 'snipMate'
 Bundle 'tComment'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'bling/vim-airline'
 
 " Color
 Bundle 'zenburn'
@@ -68,6 +70,8 @@ inoremap jj <ESC>
 " nnoremap Q gqap
 " vnoremap Q gq
 
+nnoremap <leader><leader> <c-^>
+
 " sane movement with wrap turned on
 " nnoremap j gj
 " nnoremap k gk
@@ -105,8 +109,10 @@ set whichwrap+=<,>,h,l,[,] " backspace and cursor keys wrap to
 set shortmess=filtIoOA     " shorten messages
 set report=0               " tell us about changes
 set nostartofline          " don't jump to the start of line when scrolling
-set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+"set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 set updatetime=1000
+let g:airline#extensions#tabline#enabled=1
+let g:airline_theme='dark'
 
 " ----------------------------------------------------------------------------
 " Visual Cues
