@@ -68,6 +68,10 @@ nnoremap <leader><leader> <c-^>
 " nnoremap Q gqap
 " vnoremap Q gq
 
+nnoremap <leader><leader> <c-^>
+nnoremap <leader>n :bn<cr>
+nnoremap <leader>p :bp<cr>
+
 " sane movement with wrap turned on
 " nnoremap j gj
 " nnoremap k gk
