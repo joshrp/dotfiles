@@ -27,6 +27,7 @@ Bundle 'fugitive.vim'
 Bundle 'snipMate'
 Bundle 'tComment'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'scrooloose/syntastic'
 
 " Color
 Bundle 'zenburn'
@@ -226,3 +227,13 @@ endif
 "     set t_Co=256
 "     set guitablabel=%M\ %t
 " endif
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
