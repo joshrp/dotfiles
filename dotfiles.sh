@@ -38,7 +38,6 @@ is_symlinked() {
 
     if [[ -h "$TARGET" ]]; then
         LOCAL_TARGET=$(readlink ${TARGET})
-
         if [[ "$LOCAL_TARGET" == "$SOURCE" ]]; then
             return 0
         fi

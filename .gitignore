@@ -27,7 +27,8 @@
 !bin.symlink/rbgems
 !dotfiles.sh
 !git
-!git/gitconfig
+!git/gitconfig.setup
+!git/gitconfig.template
 !git/completion.zsh
 !git/gitignore.symlink
 !lib
