@@ -5,3 +5,5 @@ if [[ ! -d "$VUNDLE_DIR" ]]; then
     mkdir -p $VUNDLE_DIR
     git clone https://github.com/gmarik/Vundle.vim.git $VUNDLE_DIR
 fi
+
+vim +PluginInstall +qall
