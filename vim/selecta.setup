@@ -1,5 +1,6 @@
 #!/bin/bash
-SELECTA_DIR="$(mktemp -q -d -t "$(basename "$0").XXXXXX")"
+BIN_DIR=$(dirname $1)/../bin.symlink
+SELECTA_DIR="$(mktemp -q -d -t "$(basename "$1").XXXXXX")"
 
 if ! check_software "git" || ! check_software "ruby"; then
     return
@@ -7,7 +8,7 @@ fi
 
 if [[ ! -f "$BIN_DIR/selecta" ]]; then
     git clone https://github.com/garybernhardt/selecta.git $SELECTA_DIR
-    mv $SELECTA_DIR/selecta ~/bin/selecta
+    mv $SELECTA_DIR/selecta $BIN_DIR/selecta
 fi
 
 rm -rf $SELECTA_DIR

@@ -1,5 +1,5 @@
 #!/bin/bash
-VUNDLE_DIR=~/.vim/bundle/vundle
+VUNDLE_DIR=$(dirname $1)/vim.symlink/bundle/vundle
 
 if ! check_software "git" || ! check_software "vim"; then
     return

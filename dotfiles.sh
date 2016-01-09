@@ -4,7 +4,6 @@ shopt -s failglob
 
 cd "$(dirname "$0")"
 DOTFILES_ROOT=$(pwd -P)
-BIN_DIR=~/bin
 MISSING_SOFTWARE=()
 
 info () {
@@ -136,17 +135,11 @@ check_software() {
 run_setups() {
     for setup in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.setup' -not -path '*.git*'); do
         info "Running setup: $setup"
-        source $setup
+        source $setup $setup
     done
 
     if [[ "${#MISSING_SOFTWARE[@]}" != "0" ]]; then
         error "Missing software: ${MISSING_SOFTWARE[*]}"
-    fi
-}
-
-create_local_bin() {
-    if [[ ! -d "$BIN_DIR" ]]; then
-        mkdir -p $BIN_DIR
     fi
 }
 
@@ -155,9 +148,10 @@ dotfiles_install() {
     local backup_all=false
     local skip_all=false
 
-    create_local_bin
+    if ! run_setups; then
+        exit
+    fi
     map_symlinks create_symlink
-    run_setups
 }
 
 dotfiles_remove() {
