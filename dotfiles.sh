@@ -4,6 +4,8 @@ shopt -s failglob
 
 cd "$(dirname "$0")"
 DOTFILES_ROOT=$(pwd -P)
+BIN_DIR=~/bin
+MISSING_SOFTWARE=()
 
 info () {
     printf "\r  [ \033[00;34m..\033[0m ] $1\n"
@@ -17,10 +19,8 @@ success () {
     printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
 }
 
-fail () {
+error () {
     printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
-    echo ''
-    exit
 }
 
 map_symlinks() {
@@ -113,12 +113,51 @@ create_symlink() {
     fi
 }
 
+add_missing_software() {
+	for e in "${MISSING_SOFTWARE[@]-}"; do
+        if [[ "$e" == "$1" ]]; then
+            return 0;
+        fi
+    done
+
+	MISSING_SOFTWARE+=($1)
+}
+
+check_software() {
+    if hash $1 2>/dev/null; then
+        return 0
+    else
+        error "Could not find software: $1"
+		add_missing_software $1
+        return 1
+    fi
+}
+
+run_setups() {
+    for setup in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.setup' -not -path '*.git*'); do
+        info "Running setup: $setup"
+        source $setup
+    done
+
+    if [[ "${#MISSING_SOFTWARE[@]}" != "0" ]]; then
+        error "Missing software: ${MISSING_SOFTWARE[*]}"
+    fi
+}
+
+create_local_bin() {
+    if [[ ! -d "$BIN_DIR" ]]; then
+        mkdir -p $BIN_DIR
+    fi
+}
+
 dotfiles_install() {
     local overwrite_all=false
     local backup_all=false
     local skip_all=false
 
+    create_local_bin
     map_symlinks create_symlink
+    run_setups
 }
 
 dotfiles_remove() {

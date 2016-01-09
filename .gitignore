@@ -59,8 +59,8 @@
 !vim/vim.symlink/syntax/actionscript.vim
 !vim/vim.symlink/syntax/cucumber.vim
 !vim/vim.symlink/syntax/mkd.vim
-!vim/vundle-setup.sh
-!vim/selecta-setup.sh
+!vim/vundle.setup
+!vim/selecta.setup
 !zsh
 !zsh/config.zsh
 !zsh/prompt.zsh

@@ -1,0 +1,13 @@
+#!/bin/bash
+SELECTA_DIR="$(mktemp -q -d -t "$(basename "$0").XXXXXX")"
+
+if ! check_software "git" || ! check_software "ruby"; then
+    return
+fi
+
+if [[ ! -f "$BIN_DIR/selecta" ]]; then
+    git clone https://github.com/garybernhardt/selecta.git $SELECTA_DIR
+    mv $SELECTA_DIR/selecta ~/bin/selecta
+fi
+
+rm -rf $SELECTA_DIR
