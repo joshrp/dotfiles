@@ -3,7 +3,6 @@ vbell off
 escape ``
 startup_message off
 autodetach on
-mousetrack off
 
 #Caption
 caption always "%{kw}%-w%{wr}%n %t %{-}%+w"
@@ -21,4 +20,5 @@ bindkey -k k3 screen -t Pi phonepi
 windowlist title "Num %10=Title %=Flags%"
 windowlist string "  %n - %10= %t %f"
 termcapinfo xterm* ti@:te@
-termcapinfo xterm-color ti@:te@
+termcapinfo xterm-256color ti@:te@
+term "screen-256color"

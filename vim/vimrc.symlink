@@ -73,6 +73,7 @@ inoremap jj <ESC>
 nnoremap <leader><leader> <c-^>
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
+nnoremap <leader>s :w<cr>
 
 " sane movement with wrap turned on
 " nnoremap j gj
