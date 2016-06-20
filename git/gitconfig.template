@@ -6,8 +6,8 @@
     whitespace = fix,trailing-space,space-before-tab
     quotepath = false
 [user]
-    name = Josh Priestley
-    email = EMAIL
+  name = AUTHORNAME
+  email = AUTHOREMAIL
 [github]
     user = joshrp
 [alias]
