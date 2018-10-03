@@ -29,6 +29,7 @@ Bundle 'tComment'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'bling/vim-airline'
+Bundle 'isRuslan/vim-es6'
 
 " Color
 Bundle 'zenburn'
