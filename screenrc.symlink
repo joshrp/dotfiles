@@ -3,6 +3,7 @@ vbell off
 escape ``
 startup_message off
 autodetach on
+altscreen on
 
 #Caption
 caption always "%{kw}%-w%{wr}%n %t %{-}%+w"
